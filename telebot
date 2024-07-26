@@ -1,0 +1,9 @@
+import telebot 
+
+bot = telebot.TeleBot('bot_token')
+
+@bot.message_handler(commands= ['start'])
+def handle_start(massage):
+    bot.send_message(massage.chat.id, "Hello World")
+
+bot.polling()
